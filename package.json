@@ -8,22 +8,9 @@
   "scripts": {
     "test": "jest",
     "testWatch": "jest --watch",
-    "start": "node index.js",
     "coverage": "jest --coverage",
-    "develop": "webpack-dev-server --open",
-    "dockerDevelop": "webpack-dev-server --host=0.0.0.0",
     "dockit": "ts-node src/dockit-core/index.ts",
-    "build:ui": "webpack",
     "build:dockit": "webpack --config dockit_cli.webpack.config.js && pkg -t node10-linux dist/dockit.js && cp dockit ./dockit-cli/usr/bin/ && sudo dpkg-deb --build dockit-cli"
-  },
-  "jest": {
-    "transform": {
-      "^.+\\.jsx?$": "babel-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
-      "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"
-    }
   },
   "debianPackageOptions": {
     "maintainer": {
@@ -80,16 +67,10 @@
   },
   "homepage": "https://github.com/tech-genii/dockit#readme",
   "dependencies": {
-    "@types/react": "^16.7.17",
-    "@types/react-dom": "^16.0.11",
-    "antd": "^3.11.2",
     "chalk": "^2.4.1",
     "commander": "^2.19.0",
     "dockerode": "^2.5.7",
     "fs": "0.0.1-security",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-router-dom": "^4.3.1",
     "ts-loader": "^5.3.1",
     "tty-table": "^2.6.9",
     "webpack": "^4.27.1",
@@ -101,20 +82,16 @@
     "@types/dockerode": "^2.5.10",
     "@types/jest": "^23.3.10",
     "@types/node": "^10.12.15",
-    "@types/react-test-renderer": "^16.0.3",
     "@types/webpack": "^4.4.21",
     "@types/webpack-dev-server": "^3.1.1",
     "@types/yaml": "^1.0.1",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "clean-webpack-plugin": "^1.0.0",
-    "css-loader": "^1.0.1",
     "debian-packager": "^1.5.3",
     "file-loader": "^2.0.0",
-    "html-webpack-plugin": "^3.2.0",
     "jest": "^23.6.0",
     "pkg": "^4.3.5",
-    "react-test-renderer": "^16.6.3",
     "rimraf": "^2.6.2",
     "ts-jest": "^23.10.5",
     "ts-node": "^7.0.1",
