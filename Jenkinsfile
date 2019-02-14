@@ -4,7 +4,9 @@ pipeline {
     stage('Build') {
       steps {
         echo 'Jenkins Dockit Build'
-        sh 'ls'
+        sh '''ls
+'''
+        sh 'dockit'
       }
     }
     stage('Test') {
