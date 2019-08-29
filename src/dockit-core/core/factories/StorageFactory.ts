@@ -1,4 +1,4 @@
-import {DockitStorage} from "../DockitStorage";
+import {DockitStorage} from "../storage/DockitStorage";
 
 interface StorageFactory {
     getStorage():DockitStorage;

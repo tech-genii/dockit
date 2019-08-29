@@ -7,7 +7,7 @@ interface Dockit{
 
     createDockerFile(dockitApp:DockitApp):Dockerfile;
 
-    commitDockit(message:String);
+    commitDockit(dockitApp:DockitApp,message:String);
 
     startUpDevDockitApp(imageName:String):DockitApp;
 
